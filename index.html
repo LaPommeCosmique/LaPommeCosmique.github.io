@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Alex's Profile</title>
+    <link rel="icon" href="static/circuit_icon.png" media="(prefers-color-scheme: light)">
+    <link rel="icon" href="static/circuit_icon_dark.png" media="(prefers-color-scheme: dark)">
+
+    <!--<script type="text/javascript" src="jquery-3.6.1.js"> </script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script type="text/javascript" src="script.js"> </script>
+
+    <link rel="stylesheet" href="styles.css">
+
+  </head>
+  <body>
+    <div id="content">
+
+
+
+
+
+
+      <div id="introduction_content_holder" class="content_holder">
+        <div id="introduction">
+          <div id="introduction_holder">
+            <div id="introduction_summary_holder">
+              <h3>Hi! I'm Alex</h3>
+              <div id="introduction_summary">
+                I'm a third year Mechanical Engineering Student at the University of British Columbia.
+                I am passionate about new technology, especially in the fuel cell and hydrogen industry.
+                When I graduate, I hope to help develop technologies such as these and help fight our climate crisis.
+                In my free time, I love to hike, play chess, and work on coding projects.
+
+                <br><br>
+                Thank you for visiting my profile. I invite you to take a look at my past work experience and projects below.
+              </div>
+            </div>
+            <div id="profile_pic" >
+              <img src="static/profile_pic_2.jpg">
+            </div>
+          </div>
+
+          <div id="shortcuts">
+            <div>
+              <a id="experience_shortcut" href="#experience_content_holder">
+                Work experience<br>&#128119;
+              </a>
+            </div>
+            <div>
+              <a id="projects_shortcut"  href="#projects_content_holder">
+                Past Projects<br>	&#128736;
+              </a>
+            </div>
+            <div>
+              <a id="contact_shortcut" href="#contact_content_holder">
+                Contact Me<br>&#128222;
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div id="experience_content_holder" class="content_holder">
+        <div id="experience">
+          <h3>Work Experience</h3>
+
+          <div id="timeline_holder">
+            <div id="timeline">
+              <div id="timeline_visual">
+                <svg width="260" height="560" viewBox="60 0 450 840">
+
+
+                  <!-- timeline grid -->
+                  <line x1="200" y1="20" x2="200" y2="820" class="timeline_grid" />
+
+                  <line x1="180" y1="120" x2="220" y2="120" class="timeline_grid" />
+                  <line x1="180" y1="420" x2="220" y2="420" class="timeline_grid" />
+                  <line x1="180" y1="720" x2="220" y2="720" class="timeline_grid" />
+
+
+                  <!-- year labels -->
+                  <text x="60" y="134" class="timeline_year">2021</text>
+                  <text x="60" y="434" class="timeline_year">2022</text>
+                  <text x="60" y="734" class="timeline_year">2023</text>
+
+
+                  <!-- time period paths -->
+                  <line x1="200" y1="220" x2="200" y2="320" class="stroke_color_1 timeline_path" />
+                  <line x1="200" y1="320" x2="200" y2="620" class="stroke_color_2 timeline_path" />
+                  <line x1="200" y1="620" x2="200" y2="720" class="stroke_color_3 timeline_path" />
+
+
+                  <!-- time period end markers -->
+                  <path d="M 200 220
+                          l 16 0
+                          a 16 16 0 0 0 -32 0
+                          a 16 16 0 0 0 32 0
+                          Z" class="fill_color_1 timeline_end_marker"/>
+
+                  <path d="M 200 320
+                          l 16 0
+                          a 16 16 0 0 0 -32 0
+                          Z" class="fill_color_1 timeline_end_marker"/>
+                  <path d="M 200 320
+                          l 16 0
+                          a 16 16 0 0 1 -32 0
+                          Z" class="fill_color_2 timeline_end_marker"/>
+
+                  <path d="M 200 620
+                          l 16 0
+                          a 16 16 0 0 0 -32 0
+                          Z" class="fill_color_2 timeline_end_marker"/>
+                  <path d="M 200 620
+                          l 16 0
+                          a 16 16 0 0 1 -32 0
+                          Z" class="fill_color_3 timeline_end_marker"/>
+
+                  <path d="M 200 720
+                          l 16 0
+                          a 16 16 0 0 0 -32 0
+                          a 16 16 0 0 0 32 0
+                          Z" class="fill_color_3 timeline_end_marker"/>
+
+
+                  <!-- month labels -->
+                  <text x="250" y="230" class="timeline_month">May</text>
+                  <text x="250" y="330" class="timeline_month">September</text>
+                  <text x="250" y="630" class="timeline_month">September</text>
+                  <text x="250" y="730" class="timeline_month">January</text>
+                </svg>
+              </div>
+              <div id="timeline_labels">
+                <div id="timeline_label_holder_1" class="timeline_label_holder">
+                  <div class="timeline_span">
+                    <svg width="20" height="40">
+                      <polyline points="5,5 15,20 5,35" class="stroke_color_1 timeline_label_tick" />
+                    </svg>
+                    <div class="timeline_label">
+                      <div class="timeline_company">
+                        Esenso Biotech
+                      </div>
+                      <div class="timeline_role">
+                        Software Developer
+                      </div>
+                    </div>
+                    <img src="static/plus_icon.svg" class="timeline_label_icon" />
+                  </div>
+                  <div class="timeline_summary">
+                    At Esenso, I worked on an android application that allows users to run voltammetry experiments (which is a type of electrochemical experiment) using Bluetooth devices connected to the app.
+
+                    <!--This project has given me a foundation in Android app architecture, and given me experience with the Bluetooth communication protocol.-->
+                    <br><br>
+                    Later (not during this term), I developed a web application that performs a similar function, which I showcase in the projects section below.
+                  </div>
+
+                </div>
+                <div id="timeline_label_holder_2" class="timeline_label_holder">
+                  <div class="timeline_span">
+                    <svg width="20" height="40">
+                      <polyline points="5,5 15,20 5,35" class="stroke_color_2 timeline_label_tick" />
+                    </svg>
+                    <div class="timeline_label">
+                      <div class="timeline_company">
+                        Flex Alert
+                      </div>
+                      <div class="timeline_role">
+                        Software Developer (Part Time)
+                      </div>
+
+                    </div>
+                    <img src="static/plus_icon.svg" class="timeline_label_icon" />
+                  </div>
+                  <div class="timeline_summary">
+                    At Flex Alert, I helped develop software that utilizes satellite data to monitor soil conditions of farms.
+                    In particular, I wrote software that collects data from online satellite databases using RESTful API, and processes and stores the data using Google Cloud Platform tools.
+                  </div>
+
+                </div>
+                <div id="timeline_label_holder_3" class="timeline_label_holder">
+                  <div class="timeline_span">
+                    <svg width="20" height="40">
+                      <polyline points="5,5 15,20 5,35" class="stroke_color_3 timeline_label_tick" />
+                    </svg>
+                    <div class="timeline_label">
+                      <div class="timeline_company">
+                        Jetstream Adventure Boats
+                      </div>
+                      <div class="timeline_role">
+                        CNC Technician
+                      </div>
+
+                    </div>
+                    <img src="static/plus_icon.svg" class="timeline_label_icon" />
+                  </div>
+                  <div class="timeline_summary">
+                    My role at Jetstream Adventure Boats is to operate and maintain CNC machines.
+                    In addition, I am responsible for preparing CAD models of parts to be CNC machined.
+                    <!--This role has given me an appreciation of manufacturing issues that good designers should consider during the design process.-->
+                  </div>
+
+                </div>
+
+
+
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+
+
+      <div id="projects_content_holder" class="content_holder">
+        <div id="projects">
+          <div id="project_display">
+            <h3> Projects </h3>
+            <div id="project_row">
+              <div id="project_vis_display" class="project_display">
+                <img src="static/vis_photo_2_cropped_3.jpg" width="300px">
+                <div class="project_label">
+                  Farm Indices Webpage &nbsp; <span class="project_ticks">&#8250;&#8250;</span>
+                </div>
+              </div>
+              <div id="project_dyno_display" class="project_display">
+                <img src="static/dyno_cropped.jpg" width="300px">
+                <div class="project_label">
+                  Vehicle Dyno &nbsp; <span class="project_ticks">&#8250;&#8250;</span>
+                </div>
+              </div>
+              <div id="project_voltammetry_display" class="project_display">
+                <img src="static/volt_2_cropped.jpg" width="300px">
+                <div class="project_label">
+                  Voltammetry App &nbsp; <span class="project_ticks">&#8250;&#8250;</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+          <div id="project_vis" class="project_content">
+
+            <h3 class="project_back_holder">
+              <span class="project_back">
+                <span class="project_ticks">&#8249;</span>
+                Projects
+              </span>
+            </h3>
+
+            <h3> Farm Indices Webpage</h3>
+            <div>
+              <div class="project_summary">
+                <div class="project_background">
+                  <h4>Background</h4>
+                  <div class="">
+                    One of the objectives of my previous company, Flex-Alert, is to develop tools to optimize the usage of resources, such as water and pesticides, in agriculture.
+                    Our approach is to use satellite data.
+                    In particular, if we split a satellite image into its primary components (different frequencies of red, green, blue), then we can use a function to calculate something known as an index (which is just a normalized value).
+                    Different indices have been developed for different purposes;
+                    for example, the NDVI index can be used to evaluate the health of vegetation.
+                  </div>
+                </div>
+                <br><br>
+                I created this webpage to display indices on a farm in Summerland, BC.
+                The webpage allows my team to visually evaluate how indices have changed during the summer of 2022, and how indices vary geographically on the farm.
+                <br><br>
+                Behind the scenes, I created a server using Google App Engine to extract and process satellite data (from a satellite database known as EOS Crop Monitoring).
+                On the server, the indices for each pixel are calculated and stored on Google Cloud.
+                The webpage uses the data stored in Google Cloud to graph the indices on a map.
+
+                <br><br>
+                Click on the image to view the webpage!
+                <br><br>
+
+              </div>
+              <div>
+                <a href="https://storage.googleapis.com/bd1e2f33-8541-485b-ac53-6ef25da5bd23/visualization/test/T1/index.html"  target="_blank" rel="noopener noreferrer">
+                  <img src="static/vis_photo_2.jpg" >
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+
+          <div id="project_dyno"  class="project_content">
+            <h3 class="project_back_holder">
+              <span class="project_back">
+                <span class="project_ticks">&#8249;</span>
+                Projects
+              </span>
+            </h3>
+
+            <h3>Vehicle Dyno</h3>
+            <div>
+              <div class="project_summary">
+                <div class="project_background">
+                  <h4>Background</h4>
+                  <div class="">
+                    I am part of the UBC Supermileage Design Team, and our goal is to design and build vehicles that push the limits of efficiency.
+                    Every year, we travel to compete with schools from all over North America.
+                    <br><br>
+                    We spend a lot of time testing and optimizing our vehicles so we can compete among the best.
+                    One important tool that we use to test our vehicles is a dynamometer (commonly known as a dyno).
+                    A dyno acts like a treadmill for a car, and it allows us to easily test our vehicles in a controlled environment.
+                  </div>
+                </div>
+                <br><br>
+                We started the dyno project in the fall of 2020, and finished building most of the system in the fall of 2022.
+                Our main objective was to have a mechanism where we would be able to control the amount of torque that we apply to the powertrain of the vehicle.
+                This would be incredibly useful, because it would allow us to simulate the vehicle running on any type of track.
+                We achieved this by using a hysterysis brake, which allows us to use current to control the amount of torque produced.
+                <br><br>
+                Starting in 2022, I worked on the dyno as the project lead, and I oversaw the manufacture and assembly of the dyno.
+                The pictures on the right show a solidworks rendering, as well as a photo of the dyno during a test with the powertrain of one of our cars.
+                <br><br>
+
+
+              </div>
+              <div class="dyno_images">
+                <img class="dyno_image" src="static/dyno_cropped.jpg"><br>
+                <img class="dyno_image" src="static/dyno_test.jpg">
+              </div>
+
+            </div>
+          </div>
+
+
+          <div id="project_voltammetry"  class="project_content">
+
+            <h3 class="project_back_holder">
+              <span class="project_back">
+                <span class="project_ticks">&#8249;</span>
+                Projects
+              </span>
+            </h3>
+
+
+            <h3> Voltammetry App</h3>
+            <div>
+              <div class="project_summary">
+                <div class="project_background">
+                  <h4>Background</h4>
+                  <div class="">
+                    Voltammetry is a type of electrochemical technique often used to determine the composition of a liquid sample.
+                    <br><br>
+                    To conduct a voltammetry experiment, we apply a sequence of voltages to a sample.
+                    This causes the chemical specimens in the sample to undergo redox reactions, which produces a current.
+                    If we measure and analyze the current and voltages, we can gain insight into what types of redox reactions are occuring, and the associated specimens in the sample.
+                    <br><br>
+                    Voltammetry has applications in various industries such as medicine and agriculture.
+                  </div>
+                </div>
+                <br><br>
+                I created this web application to run voltammetry experiments.
+                Users are required to connect a potentiometer (which is a device  that applies voltage and reads current) to a USB port.
+                Next, they are able to set experiment parameters, and start and stop the experiment from within the program.
+                The data points are graphed as the experiment runs, and the app allows users to perform data analysis on the data.
+
+                <br><br>
+                Click on the image to view the webpage!
+                <br><br>
+
+              </div>
+              <div>
+                <a href="static/esenso_voltammetry/index.html"  target="_blank" rel="noopener noreferrer">
+                  <img src="static/volt_photo.jpg" >
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+
+
+
+
+
+      <div id="contact_content_holder" class="content_holder">
+        <div id="contact">
+          <h3>Contact</h3>
+          <div id="contact_summary">
+            If you would like to get in touch, please reach out to me with my contact information below.
+            I have also included a message box below if you would like to send a message directly to me, or share any feedback.
+            <br><br>
+            Thank you so much for your interest, and I look forward to talking to you soon :)
+
+          </div>
+          <div id="contact_information">
+            <div class="contact_holder">
+              <span class="contact_label">Email: </span>
+              <span class="spacer"></span>
+              <span class="contact_data"> age@student.ubc.ca </span>
+            </div>
+            <div class="contact_holder">
+              <span class="contact_label">Phone number: </span>
+              <span class="spacer"></span>
+              <span class="contact_data"> (778) 846-2028 </span>
+            </div>
+
+          </div>
+
+          <h3>Message Box</h3>
+          <div id="message_holder">
+            <div id="message_border">
+              <div id="message" contenteditable="true"></div>
+            </div>
+            <div id="send_message">
+              <span> Send </span>
+            </div>
+          </div>
+          <br>
+          <span id="message_success">Thank you for your message! It has been recieved and I will read it as soon as I can. </span>
+          <span id="message_error"> Something went wrong :( If this error persists, please contact me by email instead.</span>
+          <span id="message_waiting">Message being sent... </span>
+          <br>
+          </div>
+      </div>
+
+    </div>
+  </body>
+</html>
