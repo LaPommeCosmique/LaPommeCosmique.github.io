@@ -1,65 +1,66 @@
 const sendMessageURL = "https://personal-354720.uw.r.appspot.com/send_message"
 
-$(document).ready(() => {
+function onDocumentReady(callback) {
+  if (document.readyState !== 'loading') callback()
+  else document.addEventListener('DOMContentLoaded', callback)
+}
 
-
-
-
+onDocumentReady(() => {
   // TIMELINE FUNCTIONALITY
   ;(function () {
     // timeline views
-    const t1 = $("#timeline_label_holder_1"),
-      t2 = $("#timeline_label_holder_2"),
-      t3 = $("#timeline_label_holder_3")
+    const t1 = document.getElementById("timeline_label_holder_1"),
+      t2 = document.getElementById("timeline_label_holder_2"),
+      t3 = document.getElementById("timeline_label_holder_3")
 
-    const s1 = t1.children(".timeline_summary"),
-      s2 = t2.children(".timeline_summary"),
-      s3 = t3.children(".timeline_summary")
+    const s1 = t1.querySelector(".timeline_summary"),
+      s2 = t2.querySelector(".timeline_summary"),
+      s3 = t3.querySelector(".timeline_summary")
 
-    const i1 = t1.children(".timeline_span").children(".timeline_label_icon"),
-      i2 = t2.children(".timeline_span").children(".timeline_label_icon"),
-      i3 = t3.children(".timeline_span").children(".timeline_label_icon")
+    const i1 = t1.querySelector(".timeline_span").querySelector(".timeline_label_icon"),
+      i2 = t2.querySelector(".timeline_span").querySelector(".timeline_label_icon"),
+      i3 = t3.querySelector(".timeline_span").querySelector(".timeline_label_icon")
 
     let currentDisplay = null;
 
     // timeline click functionality
     function displayS1 () {
-      t1.css("margin-top", 100)
-      s1.css("visibility", "visible")
-      s1.css("max-height", "300px")
-      i1.prop("src", "static/minus_icon.svg")
+      t1.style.marginTop = 100
+      s1.style.visibility = "visible"
+      s1.style.maxHeight = "300px"
+      i1.src = "static/minus_icon.svg"
     }
     function hideS1 () {
-      t1.css("margin-top", 140)
-      s1.css("visibility", "hidden")
-      s1.css("max-height", "0px")
-      i1.prop("src", "static/plus_icon.svg")
+      t1.style.marginTop = 140
+      s1.style.visibility = "hidden"
+      s1.style.maxHeight = "0px"
+      i1.src = "static/plus_icon.svg"
     }
 
     function displayS2 () {
-      t2.css("margin-top", 0)
-      s2.css("visibility", "visible")
-      s2.css("max-height", "300px")
-      i2.prop("src", "static/minus_icon.svg")
+      t2.style.marginTop = 0
+      s2.style.visibility = "visible"
+      s2.style.maxHeight = "300px"
+      i2.src = "static/minus_icon.svg"
     }
     function hideS2 () {
-      t2.css("margin-top", 20)
-      s2.css("visibility", "hidden")
-      s2.css("max-height", "0px")
-      i2.prop("src", "static/plus_icon.svg")
+      t2.style.marginTop = 20
+      s2.style.visibility = "hidden"
+      s2.style.maxHeight = "0px"
+      i2.src = "static/plus_icon.svg"
     }
 
     function displayS3 () {
-      t3.css("margin-top", 0)
-      s3.css("visibility", "visible")
-      s3.css("max-height", "300px")
-      i3.prop("src", "static/minus_icon.svg")
+      t3.style.marginTop = 0
+      s3.style.visibility = "visible"
+      s3.style.maxHeight = "300px"
+      i3.src = "static/minus_icon.svg"
     }
     function hideS3 () {
-      t3.css("margin-top", 3)
-      s3.css("visibility", "hidden")
-      s3.css("max-height", "0px")
-      i3.prop("src", "static/plus_icon.svg")
+      t3.style.marginTop = 3
+      s3.style.visibility = "hidden"
+      s3.style.maxHeight = "0px"
+      i3.src = "static/plus_icon.svg"
     }
 
     function toggleS1 () {
@@ -100,16 +101,16 @@ $(document).ready(() => {
     }
 
     // set functionality
-    $("#timeline_label_holder_1").click(toggleS1)
-    $("#timeline_label_holder_2").click(toggleS2)
-    $("#timeline_label_holder_3").click(toggleS3)
+    t1.addEventListener('click', toggleS1)
+    t2.addEventListener('click', toggleS2)
+    t3.addEventListener('click', toggleS3)
 
-    $(".fill_color_1").click(toggleS1)
-    $(".stroke_color_1").click(toggleS1)
-    $(".fill_color_2").click(toggleS2)
-    $(".stroke_color_2").click(toggleS2)
-    $(".fill_color_3").click(toggleS3)
-    $(".stroke_color_3").click(toggleS3)
+    document.querySelectorAll(".fill_color_1").forEach(e => e.addEventListener('click', toggleS1))
+    document.querySelectorAll(".stroke_color_1").forEach(e => e.addEventListener('click', toggleS1))
+    document.querySelectorAll(".fill_color_2").forEach(e => e.addEventListener('click', toggleS2))
+    document.querySelectorAll(".stroke_color_2").forEach(e => e.addEventListener('click', toggleS2))
+    document.querySelectorAll(".fill_color_3").forEach(e => e.addEventListener('click', toggleS3))
+    document.querySelectorAll(".stroke_color_3").forEach(e => e.addEventListener('click', toggleS3))
   })()
 
 
@@ -119,54 +120,54 @@ $(document).ready(() => {
 
   // PROJECTS LIST FUNTIONALITY
   ;(function() {
-    const holder = $("#projects_content_holder")
+    const holder = document.getElementById("projects_content_holder")
 
-    const display = $("#project_display")
-    const visDisplay = $("#project_vis"),
-      dynoDisplay = $("#project_dyno"),
-      voltammetryDisplay = $("#project_voltammetry")
+    const display = document.getElementById("project_display")
+    const visDisplay = document.getElementById("project_vis"),
+      dynoDisplay = document.getElementById("project_dyno"),
+      voltammetryDisplay = document.getElementById("project_voltammetry")
 
     function showDisplay() {
-      display.show()
-      visDisplay.hide()
-      dynoDisplay.hide()
-      voltammetryDisplay.hide()
+      display.style.display = ''
+      visDisplay.style.display = 'none'
+      dynoDisplay.style.display = 'none'
+      voltammetryDisplay.style.display = 'none'
 
-      holder[0].scrollIntoView()
+      holder.scrollIntoView()
     }
 
     // add functionality
-    $(".project_back").click(showDisplay)
-    $("#project_vis_display").click(() => {
-      visDisplay.show()
-      display.hide()
-      dynoDisplay.hide()
-      voltammetryDisplay.hide()
+    document.querySelectorAll(".project_back").forEach(e => e.addEventListener("click", showDisplay))
+    document.getElementById("project_vis_display").addEventListener("click", () => {
+      visDisplay.style.display = ''
+      display.style.display = 'none'
+      dynoDisplay.style.display = 'none'
+      voltammetryDisplay.style.display = 'none'
 
-      holder[0].scrollIntoView()
+      holder.scrollIntoView()
     })
-    $("#project_dyno_display").click(() => {
-      display.hide()
-      visDisplay.hide()
-      dynoDisplay.show()
-      voltammetryDisplay.hide()
+    document.getElementById("project_dyno_display").addEventListener("click", () => {
+      display.style.display = 'none'
+      visDisplay.style.display = 'none'
+      dynoDisplay.style.display = ''
+      voltammetryDisplay.style.display = 'none'
 
-      holder[0].scrollIntoView()
+      holder.scrollIntoView()
     })
-    $("#project_voltammetry_display").click(() => {
-      display.hide()
-      visDisplay.hide()
-      dynoDisplay.hide()
-      voltammetryDisplay.show()
+    document.getElementById("project_voltammetry_display").addEventListener("click", () => {
+      display.style.display = 'none'
+      visDisplay.style.display = 'none'
+      dynoDisplay.style.display = 'none'
+      voltammetryDisplay.style.display = ''
 
-      holder[0].scrollIntoView()
+      holder.scrollIntoView()
     })
 
     // initialize
-    display.show()
-    visDisplay.hide()
-    dynoDisplay.hide()
-    voltammetryDisplay.hide()
+    display.style.display = ''
+    visDisplay.style.display = 'none'
+    dynoDisplay.style.display = 'none'
+    voltammetryDisplay.style.display = 'none'
   })()
 
 
@@ -183,35 +184,35 @@ $(document).ready(() => {
 
   // CONTACT FUNCTIONALITY
   ;(function() {
-    const messageBox = $("#message")
-    const messageButton = $("#send_message")
-    const successDisplay = $("#message_success"),
-      errorDisplay = $("#message_error"),
-      waitingDisplay = $("#message_waiting")
+    const messageBox = document.getElementById("message")
+    const messageButton = document.getElementById("send_message")
+    const successDisplay = document.getElementById("message_success"),
+      errorDisplay = document.getElementById("message_error"),
+      waitingDisplay = document.getElementById("message_waiting")
 
 
-    messageButton.click(() => {
-      const message = messageBox.text()
+    messageButton.addEventListener("click", () => {
+      const message = messageBox.textContent
 
       // TESTING
       if (message === "TEST: ERROR"){
-        successDisplay.hide()
-        errorDisplay.show()
-        waitingDisplay.hide()
+        successDisplay.style.display = 'none'
+        errorDisplay.style.display = 'block'
+        waitingDisplay.style.display = 'none'
       } else if (message === "TEST: SUCCESS") {
-        successDisplay.show()
-        errorDisplay.hide()
-        waitingDisplay.hide()
+        successDisplay.style.display = 'block'
+        errorDisplay.style.display = 'none'
+        waitingDisplay.style.display = 'none'
       } else if (message === "TEST: WAITING") {
-        successDisplay.hide()
-        errorDisplay.hide()
-        waitingDisplay.show()
+        successDisplay.style.display = 'none'
+        errorDisplay.style.display = 'none'
+        waitingDisplay.style.display = 'block'
       } else if (message !== "") {
         // send message
-        successDisplay.hide()
-        errorDisplay.hide()
-        waitingDisplay.show()
-        messageButton.hide()
+        successDisplay.style.display = 'none'
+        errorDisplay.style.display = 'none'
+        waitingDisplay.style.display = 'block'
+        messageButton.style.display = 'none'
         //messageBox.text("")
 
         const data = {
@@ -236,22 +237,22 @@ $(document).ready(() => {
         }).then(response => {
           if (response.status === 200 || response.status === 201 || response.status === 202) {
             // message successful
-            successDisplay.show()
-            errorDisplay.hide()
-            waitingDisplay.hide()
+            successDisplay.style.display = 'block'
+            errorDisplay.style.display = 'none'
+            waitingDisplay.style.display = 'none'
           } else {
             // error
-            successDisplay.hide()
-            errorDisplay.show()
-            waitingDisplay.hide()
+            successDisplay.style.display = 'none'
+            errorDisplay.style.display = 'block'
+            waitingDisplay.style.display = 'none'
           }
         }).catch(() => {
           // error
-          successDisplay.hide()
-          errorDisplay.show()
-          waitingDisplay.hide()
+          successDisplay.style.display = 'none'
+          errorDisplay.style.display = 'block'
+          waitingDisplay.style.display = 'none'
         }).finally(() => {
-          messageButton.show()
+          messageButton.style.display = 'block'
         })
       }
     })
