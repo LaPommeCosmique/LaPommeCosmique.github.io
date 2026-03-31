@@ -9,142 +9,54 @@ onDocumentReady(() => {
   // TIMELINE FUNCTIONALITY
   ;(function () {
     // timeline views
-    const t1 = document.getElementById("timeline_label_holder_1"),
-      t2 = document.getElementById("timeline_label_holder_2"),
-      t3 = document.getElementById("timeline_label_holder_3"),
-      t4 = document.getElementById("timeline_label_holder_4")
+    const timeline_components = [
+      document.getElementById("timeline_label_holder_1"),
+      document.getElementById("timeline_label_holder_2"),
+      document.getElementById("timeline_label_holder_3"),
+      document.getElementById("timeline_label_holder_4")
+    ]
 
-    const s1 = t1.querySelector(".timeline_summary"),
-      s2 = t2.querySelector(".timeline_summary"),
-      s3 = t3.querySelector(".timeline_summary"),
-      s4 = t4.querySelector(".timeline_summary")
-
-    const i1 = t1.querySelector(".timeline_span").querySelector(".timeline_label_icon"),
-      i2 = t2.querySelector(".timeline_span").querySelector(".timeline_label_icon"),
-      i3 = t3.querySelector(".timeline_span").querySelector(".timeline_label_icon"),
-      i4 = t4.querySelector(".timeline_span").querySelector(".timeline_label_icon")
-
-    let currentDisplay = null;
+    let currentDisplayComponent = null;
 
     // timeline click functionality
-    function displayS1 () {
-      t1.style.marginTop = "20px"
-      s1.style.visibility = "visible"
-      s1.style.maxHeight = "300px"
-      i1.src = "static/minus_icon.svg"
+    function showSummary (timeline_component) {
+      const summary = timeline_component.querySelector(".timeline_summary")
+      summary.style.visibility = "visible"
+      summary.style.maxHeight = "300px"
+      const icon = timeline_component.querySelector(".timeline_label_icon_holder").querySelector(".timeline_label_icon")
+      icon.src = "static/minus_icon.svg"
+      const icon_label = timeline_component.querySelector(".timeline_label_icon_holder").querySelector(".timeline_label_icon_label")
+      icon_label.textContent = "see less"
     }
-    function hideS1 () {
-      t1.style.marginTop = "60px"
-      s1.style.visibility = "hidden"
-      s1.style.maxHeight = "0px"
-      i1.src = "static/plus_icon.svg"
-    }
-
-    function displayS2 () {
-      t2.style.marginTop = "0px"
-      s2.style.visibility = "visible"
-      s2.style.maxHeight = "300px"
-      i2.src = "static/minus_icon.svg"
-    }
-    function hideS2 () {
-      t2.style.marginTop = "20px"
-      s2.style.visibility = "hidden"
-      s2.style.maxHeight = "0px"
-      i2.src = "static/plus_icon.svg"
+    function hideSummary (timeline_component) {
+      const summary = timeline_component.querySelector(".timeline_summary")
+      summary.style.visibility = "hidden"
+      summary.style.maxHeight = "0px"
+      const icon = timeline_component.querySelector(".timeline_label_icon_holder").querySelector(".timeline_label_icon")
+      icon.src = "static/plus_icon.svg"
+      const icon_label = timeline_component.querySelector(".timeline_label_icon_holder").querySelector(".timeline_label_icon_label")
+      icon_label.textContent = "see more"
     }
 
-    function displayS3 () {
-      t3.style.marginTop = "0px"
-      s3.style.visibility = "visible"
-      s3.style.maxHeight = "300px"
-      i3.src = "static/minus_icon.svg"
-    }
-    function hideS3 () {
-      t3.style.marginTop = "20px"
-      s3.style.visibility = "hidden"
-      s3.style.maxHeight = "0px"
-      i3.src = "static/plus_icon.svg"
-    }
-
-    function displayS4 () {
-      t4.style.marginTop = "0px"
-      s4.style.visibility = "visible"
-      s4.style.maxHeight = "300px"
-      i4.src = "static/minus_icon.svg"
-    }
-    function hideS4 () {
-      t4.style.marginTop = "20px"
-      s4.style.visibility = "hidden"
-      s4.style.maxHeight = "0px"
-      i4.src = "static/plus_icon.svg"
-    }
-
-    function toggleS1 () {
-      if (currentDisplay === 1) {
-        hideS1()
-        currentDisplay = null
+    function toggleSummary(component) {
+      if (currentDisplayComponent === component) {
+        hideSummary(timeline_components[currentDisplayComponent])
+        currentDisplayComponent = null
       } else {
-        if (currentDisplay === 2) hideS2()
-        else if (currentDisplay === 3) hideS3()
-        else if (currentDisplay === 4) hideS4()
-        currentDisplay = 1
-        displayS1()
-      }
-    }
-
-    function toggleS2 () {
-      if (currentDisplay === 2) {
-        hideS2()
-        currentDisplay = null
-      } else {
-        if (currentDisplay === 1) hideS1()
-        else if (currentDisplay === 3) hideS3()
-        else if (currentDisplay === 4) hideS4()
-        currentDisplay = 2
-        displayS2()
-      }
-    }
-
-    function toggleS3 () {
-      if (currentDisplay === 3) {
-        hideS3()
-        currentDisplay = null
-      } else {
-        if (currentDisplay === 1) hideS1()
-        else if (currentDisplay === 2) hideS2()
-        else if (currentDisplay === 4) hideS4()
-        currentDisplay = 3
-        displayS3()
-      }
-    }
-
-    function toggleS4 () {
-      if (currentDisplay === 4) {
-        hideS4()
-        currentDisplay = null
-      } else {
-        if (currentDisplay === 1) hideS1()
-        else if (currentDisplay === 2) hideS2()
-        else if (currentDisplay === 3) hideS3()
-        currentDisplay = 4
-        displayS4()
+        if (currentDisplayComponent !== null) hideSummary(timeline_components[currentDisplayComponent])
+        showSummary(timeline_components[component])
+        currentDisplayComponent = component
       }
     }
 
     // set functionality
-    t1.addEventListener('click', toggleS1)
-    t2.addEventListener('click', toggleS2)
-    t3.addEventListener('click', toggleS3)
-    t4.addEventListener('click', toggleS4)
-
-    document.querySelectorAll(".fill_color_1").forEach(e => e.addEventListener('click', toggleS1))
-    document.querySelectorAll(".stroke_color_1").forEach(e => e.addEventListener('click', toggleS1))
-    document.querySelectorAll(".fill_color_2").forEach(e => e.addEventListener('click', toggleS2))
-    document.querySelectorAll(".stroke_color_2").forEach(e => e.addEventListener('click', toggleS2))
-    document.querySelectorAll(".fill_color_3").forEach(e => e.addEventListener('click', toggleS3))
-    document.querySelectorAll(".stroke_color_3").forEach(e => e.addEventListener('click', toggleS3))
-    document.querySelectorAll(".fill_color_4").forEach(e => e.addEventListener('click', toggleS4))
-    document.querySelectorAll(".stroke_color_4").forEach(e => e.addEventListener('click', toggleS4))
+    timeline_components.forEach((c, i) => c.addEventListener("click", () => toggleSummary(i)))
+    
+    // toggle if line/dot in timeline is pressed
+    timeline_components.forEach((c, i) => {
+      document.querySelectorAll(".fill_color_"+(i+1)).forEach(e => e.addEventListener('click', () => toggleSummary(i)))
+      document.querySelectorAll(".stroke_color_"+(i+1)).forEach(e => e.addEventListener('click', () => toggleSummary(i)))
+    })
   })()
 
 

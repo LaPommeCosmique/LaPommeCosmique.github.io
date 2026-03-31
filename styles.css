@@ -187,37 +187,62 @@ a {
 }
 
 #timeline_label_holder_1 {
-  margin-top: 60px;
+  margin-top: 20px;
   color: #D76A03;
 }
 #timeline_label_holder_2 {
-  margin-top: 20px;
+  margin-top: 0px;
   color: #e3ad00;
 }
 #timeline_label_holder_3 {
-  margin-top: 20px;
+  margin-top: 0px;
   color: #BF3100;
 }
 #timeline_label_holder_4 {
-  margin-top: 20px;
+  margin-top: 0px;
   color: #0d3290;
 }
 
+.timeline_label_header{
+  display: flex;
+  justify-content: space-between
+}
 .timeline_label {
   display:inline-block;
   padding: 24px;
-}
-.timeline_company {
-  font-size: 24px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 .timeline_role {
+  font-size: 24px;
+}
+.timeline_company {
   font-size: 16px;
   margin-top: 4px;
+  color: #4d4d4d;
+  font-style: italic;
+}
+.timeline_date_location_holder {
+  padding-top: 12px;
+  float:right;
+  font-style: italic;
+  text-align: right;
+}
+.timeline_date {
+  font-size: 14px;
+  color: #777777;
+}
+.timeline_location {
+  font-size: 14px;
   color: #777777;
 }
 
+.timeline_summary[style*="visibility: visible"] {
+  padding-top: 12px;
+}
 .timeline_summary {
   margin-left: 50px;
+  padding-top: 0px;
   max-width: 700px;
   color:#333333;
   white-space: normal;
@@ -226,6 +251,7 @@ a {
   visibility:hidden;
   max-height: 0;
   transition: max-height 250ms, visibility 250ms linear;
+  transition: padding-top 250ms, visibility 250ms linear;
 }
 
 .timeline_label_tick {
@@ -233,9 +259,22 @@ a {
   fill: none;
 }
 
+.timeline_label_icon_holder{
+  padding: 0px;
+  padding-top: 12px;
+  padding-bottom: 24px;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  padding-left: 48px;
+}
 .timeline_label_icon {
-  padding-top: 20px;
-  float:right;
+  width: 16px;
+}
+.timeline_label_icon_label {
+  font-size: 12px;
+  padding-left: 12px;
+  color: #898989;
 }
 
 .timeline_end_marker,
