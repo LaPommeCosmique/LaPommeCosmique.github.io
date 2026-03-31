@@ -187,7 +187,7 @@ a {
 }
 
 #timeline_label_holder_1 {
-  margin-top: 140px;
+  margin-top: 60px;
   color: #D76A03;
 }
 #timeline_label_holder_2 {
@@ -197,6 +197,10 @@ a {
 #timeline_label_holder_3 {
   margin-top: 20px;
   color: #BF3100;
+}
+#timeline_label_holder_4 {
+  margin-top: 20px;
+  color: #0d3290;
 }
 
 .timeline_label {
@@ -253,6 +257,9 @@ a {
 .stroke_color_3 {
   stroke: #BF3100;
 }
+.stroke_color_4 {
+  stroke: #0d3290;
+}
 .fill_color_1 {
   fill: #D76A03;
 }
@@ -261,6 +268,9 @@ a {
 }
 .fill_color_3 {
   fill: #BF3100;
+}
+.fill_color_4 {
+  fill: #0d3290;
 }
 
 
