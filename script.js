@@ -69,9 +69,9 @@ onDocumentReady(() => {
     const holder = document.getElementById("projects_content_holder")
 
     const display = document.getElementById("project_display")
-    const visDisplay = document.getElementById("project_vis"),
-      dynoDisplay = document.getElementById("project_dyno"),
-      voltammetryDisplay = document.getElementById("project_voltammetry")
+    const visDisplay = document.getElementById("project_1"),
+      dynoDisplay = document.getElementById("project_2"),
+      voltammetryDisplay = document.getElementById("project_3")
 
     function showDisplay() {
       display.style.display = ''
@@ -84,7 +84,7 @@ onDocumentReady(() => {
 
     // add functionality
     document.querySelectorAll(".project_back").forEach(e => e.addEventListener("click", showDisplay))
-    document.getElementById("project_vis_display").addEventListener("click", () => {
+    document.getElementById("project_1_display").addEventListener("click", () => {
       visDisplay.style.display = ''
       display.style.display = 'none'
       dynoDisplay.style.display = 'none'
@@ -92,7 +92,7 @@ onDocumentReady(() => {
 
       holder.scrollIntoView()
     })
-    document.getElementById("project_dyno_display").addEventListener("click", () => {
+    document.getElementById("project_2_display").addEventListener("click", () => {
       display.style.display = 'none'
       visDisplay.style.display = 'none'
       dynoDisplay.style.display = ''
@@ -100,7 +100,7 @@ onDocumentReady(() => {
 
       holder.scrollIntoView()
     })
-    document.getElementById("project_voltammetry_display").addEventListener("click", () => {
+    document.getElementById("project_3_display").addEventListener("click", () => {
       display.style.display = 'none'
       visDisplay.style.display = 'none'
       dynoDisplay.style.display = 'none'
