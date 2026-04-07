@@ -69,51 +69,29 @@ onDocumentReady(() => {
     const holder = document.getElementById("projects_content_holder")
 
     const display = document.getElementById("project_display")
-    const visDisplay = document.getElementById("project_1"),
-      dynoDisplay = document.getElementById("project_2"),
-      voltammetryDisplay = document.getElementById("project_3")
+    const projectIds = ["project_1", "project_2", "project_3", "project_4", "project_5", "project_6"]
+    const projectDisplays = projectIds.map(id => document.getElementById(id))
 
     function showDisplay() {
       display.style.display = ''
-      visDisplay.style.display = 'none'
-      dynoDisplay.style.display = 'none'
-      voltammetryDisplay.style.display = 'none'
+      projectDisplays.forEach(d => d.style.display = 'none')
 
       holder.scrollIntoView()
     }
-
+    
     // add functionality
     document.querySelectorAll(".project_back").forEach(e => e.addEventListener("click", showDisplay))
-    document.getElementById("project_1_display").addEventListener("click", () => {
-      visDisplay.style.display = ''
-      display.style.display = 'none'
-      dynoDisplay.style.display = 'none'
-      voltammetryDisplay.style.display = 'none'
-
-      holder.scrollIntoView()
-    })
-    document.getElementById("project_2_display").addEventListener("click", () => {
-      display.style.display = 'none'
-      visDisplay.style.display = 'none'
-      dynoDisplay.style.display = ''
-      voltammetryDisplay.style.display = 'none'
-
-      holder.scrollIntoView()
-    })
-    document.getElementById("project_3_display").addEventListener("click", () => {
-      display.style.display = 'none'
-      visDisplay.style.display = 'none'
-      dynoDisplay.style.display = 'none'
-      voltammetryDisplay.style.display = ''
-
-      holder.scrollIntoView()
+    projectIds.forEach((id, i) => {
+      document.getElementById(id + "_display").addEventListener("click", () => {
+        display.style.display = 'none'
+        projectDisplays.forEach((d, j) => d.style.display = i === j ? '' : 'none')
+        holder.scrollIntoView()
+      })
     })
 
     // initialize
     display.style.display = ''
-    visDisplay.style.display = 'none'
-    dynoDisplay.style.display = 'none'
-    voltammetryDisplay.style.display = 'none'
+    projectDisplays.forEach(d => d.style.display = 'none')
   })()
 
 
