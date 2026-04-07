@@ -68,7 +68,6 @@ onDocumentReady(() => {
   ;(function() {
     // deselect everything when project shortcut is presesd
     document.getElementById("projects_shortcut").addEventListener("click", showDisplay)
-    })
 
     const holder = document.getElementById("projects_content_holder")
 
