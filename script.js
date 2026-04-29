@@ -64,36 +64,36 @@ onDocumentReady(() => {
 
 
 
-  // PROJECTS LIST FUNTIONALITY
-  ;(function() {
-    // deselect everything when project shortcut is presesd
-    document.getElementById("projects_shortcut").addEventListener("click", showDisplay)
+  // // PROJECTS LIST FUNTIONALITY
+  // ;(function() {
+  //   // deselect everything when project shortcut is presesd
+  //   document.getElementById("projects_shortcut").addEventListener("click", showDisplay)
 
-    const holder = document.getElementById("projects_content_holder")
+  //   const holder = document.getElementById("projects_content_holder")
 
-    const display = document.getElementById("project_display")
-    const projectIds = ["project_1", "project_2", "project_3", "project_4", "project_5", "project_6"]
-    const projectDisplays = projectIds.map(id => document.getElementById(id))
+  //   const display = document.getElementById("project_display")
+  //   const projectIds = ["project_1", "project_2", "project_3", "project_4", "project_5", "project_6"]
+  //   const projectDisplays = projectIds.map(id => document.getElementById(id))
 
-    function showDisplay() {
-      display.style.display = ''
-      projectDisplays.forEach(d => d.style.display = 'none')
+  //   function showDisplay() {
+  //     display.style.display = ''
+  //     projectDisplays.forEach(d => d.style.display = 'none')
 
-      holder.scrollIntoView()
-    }
+  //     holder.scrollIntoView()
+  //   }
     
-    // add functionality
-    document.querySelectorAll(".project_back").forEach(e => e.addEventListener("click", showDisplay))
-    projectIds.forEach((id, i) => {
-      document.getElementById(id + "_display").addEventListener("click", () => {
-        display.style.display = 'none'
-        projectDisplays.forEach((d, j) => d.style.display = i === j ? '' : 'none')
-        holder.scrollIntoView()
-      })
-    })
+  //   // add functionality
+  //   document.querySelectorAll(".project_back").forEach(e => e.addEventListener("click", showDisplay))
+  //   projectIds.forEach((id, i) => {
+  //     document.getElementById(id + "_display").addEventListener("click", () => {
+  //       display.style.display = 'none'
+  //       projectDisplays.forEach((d, j) => d.style.display = i === j ? '' : 'none')
+  //       holder.scrollIntoView()
+  //     })
+  //   })
 
-    // initialize
-    display.style.display = ''
-    projectDisplays.forEach(d => d.style.display = 'none')
-  })()
+  //   // initialize
+  //   display.style.display = ''
+  //   projectDisplays.forEach(d => d.style.display = 'none')
+  // })()
 })
