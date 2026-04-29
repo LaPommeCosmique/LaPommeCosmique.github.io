@@ -56,6 +56,7 @@ a {
   width:100%;
   display: flex;
   justify-content: center;
+  align-items: center;
   padding:60px;
   box-sizing: border-box;
 }
@@ -69,7 +70,8 @@ a {
   max-width: 600px;
 }
 #profile_pic > img{
-  max-width:400px;
+  max-width:300px;
+  border-radius: 50%;
 }
 
 #shortcuts {
@@ -396,13 +398,23 @@ a {
   padding: 12px;
 }
 .project_summary > a {
-  color: #555555;
+  color: rgb(49, 93, 225);
 }
 .project_summary > a:hover {
-  font-weight: bold;
+  /* font-weight: bold; */
+  color: rgb(0, 39, 157);
 }
 .project_summary > a:active {
   color: #222222;
+}
+
+.project_header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.project_header > * {
+  flex: 1 1 300px;
 }
 
 .project_content img {

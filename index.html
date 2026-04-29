@@ -25,17 +25,13 @@
             <div id="introduction_summary_holder">
               <h3>Hi! I'm Alex</h3>
               <div id="introduction_summary">
-                I'm a third year Mechanical Engineering Student at the University of British Columbia.
-                I am passionate about new technology, especially in the fuel cell and hydrogen industry.
-                When I graduate, I hope to help develop technologies such as these and help fight our climate crisis.
-                In my free time, I love to hike, play chess, and work on coding projects.
-
+                Thank you for visiting my profile. 
                 <br><br>
-                Thank you for visiting my profile. I invite you to take a look at my past work experience and projects below.
+                I invite you to take a look at my past projects and work experience below.
               </div>
             </div>
             <div id="profile_pic" >
-              <img src="static/profile_pic_2.jpg">
+              <img src="static/profile_pic_3.jpg">
             </div>
           </div>
 
@@ -67,13 +63,13 @@
             <h3> Projects </h3>
             <div id="project_row">
               <div id="project_1_display" class="project_display">
-                <img src="static/circuit_icon_dark.png">
+                <img src="static/torusophone_pic.png">
                 <div class="project_label">
                   Torusophone &nbsp; <span class="project_ticks">&#8250;&#8250;</span>
                 </div>
               </div>
               <div id="project_2_display" class="project_display">
-                <img src="static/circuit_icon_dark.png">
+                <img src="static/nc_pruning_pic.png">
                 <div class="project_label">
                   Neural Collapse Pruning &nbsp; <span class="project_ticks">&#8250;&#8250;</span>
                 </div>
@@ -99,7 +95,7 @@
                 </div>
               </div>
               <div id="project_6_display" class="project_display">
-                <img src="static/volt_2_cropped.jpg">
+                <img src="static/volt_3_cropped.png">
                 <div class="project_label">
                   Voltammetry App &nbsp; <span class="project_ticks">&#8250;&#8250;</span>
                 </div>
@@ -137,7 +133,7 @@
               </div>
               <div>
                 <a href="http://www.google.ca"  target="_blank" rel="noopener noreferrer">
-                  <img src="static/circuit_icon_dark.png" >
+                  <img src="static/torusophone_pic.png" >
                 </a>
               </div>
 
@@ -259,9 +255,7 @@
                 <div class="project_background">
                   <h4>Background</h4>
                   <div class="">
-                    *** placeholder text ***
-
-                    I am part of the UBC Supermileage Design Team, and our goal is to design and build vehicles that push the limits of efficiency. Every year, we travel to compete with schools from all over North America.
+                    During my undergraduate degree, I was part of the UBC Supermileage Design Team from 2020 to 2024. The goal of the Supermileage design team is to design and build vehicles that push the limits of efficiency. Every year, we travel to compete with schools from all over North America.
 
                     <br><br>
                     We spend a lot of time testing and optimizing our vehicles so we can compete among the best. One important tool that we use to test our vehicles is a dynamometer (commonly known as a dyno). A dyno acts like a treadmill for a car, and it allows us to easily test our vehicles in a controlled environment. 
@@ -295,33 +289,43 @@
             <h3> Voltammetry App</h3>
             <div>
               <div class="project_summary">
-                <div class="project_background">
-                  <h4>Background</h4>
-                  <div class="">
-                    Voltammetry is a type of electrochemical technique often used to determine the composition of a liquid sample.
-                    <br><br>
-                    To conduct a voltammetry experiment, we apply a sequence of voltages to a sample.
-                    This causes the chemical specimens in the sample to undergo redox reactions, which produces a current.
-                    If we measure and analyze the current and voltages, we can gain insight into what types of redox reactions are occuring, and the associated specimens in the sample.
-                    <br><br>
-                    Voltammetry has applications in various industries such as medicine and agriculture.
+                <div class="project_header">
+                  <div class="project_background">
+                    <h4>Background</h4>
+                    <div class="">
+                      Voltammetry is an electrochemical technique that can be used to analyze the composition of specimens in a sample of liquid.
+                      <br><br>
+                      To conduct a voltammetry experiment, we first apply a sequence of voltages to a sample using a pair of electrodes.
+                      This causes some chemical specimens in the sample to undergo redox reactions, which generates a current - which can be measured.
+                      <br><br>
+                      Since different specimens undergo redox reactions at different voltages, if we measure the current detected by the electrodes at each voltage level, we can determine what types of redox reactions are happening. 
+                      This allows us to gain insight in what specimens are present in the sample of liquid.
+                    </div>
+                  </div>
+                  <div>
+                    <a href="https://voltammetry-web-app-git-main-lapommecosmiques-projects.vercel.app/"  target="_blank" rel="noopener noreferrer">
+                      <img src="static/volt_3.png" >
+                    </a>
                   </div>
                 </div>
                 <br><br>
-                I created this web application to run voltammetry experiments.
-                Users are required to connect a potentiometer (which is a device  that applies voltage and reads current) to a USB port.
-                Next, they are able to set experiment parameters, and start and stop the experiment from within the program.
-                The data points are graphed as the experiment runs, and the app allows users to perform data analysis on the data.
-
+                The Voltammetry App is a web application I developed from 2022 to 2024 that allows users to conduct voltammetry experiments using <a href="https://microfluidics.utoronto.ca/gitlab/dstat/dstat-documentation/-/wikis/home">DStat potentiometer</a> devices.
+                I programmed the website using React NextJS.
+                <br><br>
+                To use the website, users are required to connect a DStat device via USB, which then communicates with the web interface via serial communication using the <a href="https://microfluidics.utoronto.ca/gitlab/dstat/dstat-firmware/-/blob/master/communication%20protocol.txt?ref_type=heads">DStat communication protocol</a>. 
+                Next, in the application, users are able to configure the experiment parameters and operate the DStat device.
+                As the experiment runs, pairs of voltage and current datapoints are measured by the DStat and sent to the web interface, where it can be plotted and analyzed using tools in the app.
+                <br><br>
+                During the development of the website, I often did not have access to the DStat device
+                <br><br>
+                <ul>
+                  <li><a href="developer.mozilla.org/en-US/docs/Web/API/WebUSB_API"></a></li>
+                  <li><a href="developer.mozilla.org/en-US/docs/Web/API/WebUSB_API"></a></li>
+                </ul>
                 <br><br>
                 Click on the image to view the webpage!
                 <br><br>
 
-              </div>
-              <div>
-                <a href="static/esenso_voltammetry/index.html"  target="_blank" rel="noopener noreferrer">
-                  <img src="static/volt_photo.jpg" >
-                </a>
               </div>
 
             </div>
@@ -582,7 +586,7 @@
             <i>
               Note on AI usage: no AI tools was used to generate any content or code for this webpage. 
               <br>
-              <a href="https://github.com/LaPommeCosmique/LaPommeCosmique.github.io">(see github)</a> 
+              <a href="https://github.com/LaPommeCosmique/LaPommeCosmique.github.io">(github link)</a> 
             </i>
           </div>
       </div>
