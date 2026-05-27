@@ -10,7 +10,6 @@
     </head>
     <body>
         <div id="content">
-            <div id="project_1" class="project_content">
             
             <a href="../index.html#projects">
                 <h3 class="project_back_holder">
@@ -21,30 +20,112 @@
                 </h3>
             </a>
 
-            <h3> **project name** </h3>
+            <h3> Bike Lock Alarm </h3>
+
+            <h4>Background and Motivation</h4>
             <div>
-                <div class="project_summary">
-                <div class="project_background">
-                    <h4>Background</h4>
-                    <div class="">
-                    ***placeholder text***
-                    </div>
-                </div>
-                <br><br>
+                The Bike Lock Alarm is a project I worked on with two engineering students for a graduate class (ECE1528 - Internet of Things). The goal of the project was to design an IoT system, consisting of physical IoT devices and cloud infrastructure to operate the system.
+            </div>
+            <div>
+                For many students at UofT, biking is a popular way of getting around. However, bike thefts are quite prevalent around campus, and deter many from owning their own bikes. To address this issue, our group believed that we could incorporate IoT technology in existing bike locks to make it harder for thieves to steal bikes. 
+            </div>
+            
+            <div class="media-holder">
+                <img class="small" src="../static/bike-alarm-popular-lock-examples.png" alt="Types of popular bike locks">
+                <span class="image-label">
+                    The U-lock and chain-lock are popular methods of securing bikes - yet many bike thieves are not deterred by these simple contraptions
+                </span>
+            </div>
+
+            <div>
+                Our goal was to create a bike lock that would detect when a thief was attempting to break in, upon which alarms would be triggered to scare them away. Additionally, our system would allow users to monitor their bikes remotely through a user interface, which would also notify users when suspicious activities occur. Ultimately, we hoped that our system would provide an additional layer of security and deter potential bike thieves.
+            </div>
+
+            <h4>System</h4>
+            <div>
+            The system that we designed consisted of 4 main components. 
+            </div>
+            <table>
+                <tr>
+                    <td><i>1</i></td>
+                    <td>The bike lock</td>
+                    <td>
+                        The bike lock, like a normal bike lock, would be used to secure the bike to a bike rack. However, unlike a normal bike lock, it would contain several sensors (accelerometer and switches) that monitor the lock and detect if it is being tampered with, or broken into.
+                    </td>
+                </tr>
+                <tr>
+                    <td><i>2</i></td>
+                    <td>The alarm box</td>
+                    <td>
+                        The alarm box would be mounted to the frame of the bike, and would contain sound alarms and LEDs that would trigger when the bike lock detects suspicious activity. In addition, it would act as a communication gateway between the bike lock and the cloud. Communication between the alarm box and bike lock would occur through bluetooth using IoT protocols (MQTT) and would communicate to the cloud either through WiFi, or a cellular data transmitter/receiver.
+                    </td>
+                </tr>
+                <tr>
+                    <td><i>3</i></td>
+                    <td>The cloud component</td>
+                    <td>
+                        The cloud component, hosted on Google Cloud Services, and would contain a database and web server.
+                    </td>
+                </tr>
+                <tr>
+                    <td><i>4</i></td>
+                    <td>The web interface</td>
+                    <td>
+                        The web interface would allow users to monitor the bike lock system remotely, as well as manually activate or deactivate the sound alarm.
+                    </td>
+                </tr>
+            </table>
+            <div>
+                To use our system, the user would lock the bike in a similar way to a normal u-lock. An example of a secured bike is shown below.
+            </div>
+            <br>
+            <div class="media-holder">
+                <img class="big" src="../static/bike-alarm-lock-components.png" alt="Bike secured with lock">
+                <span class="image-label">
+                    A bike secured with our IoT bike lock. The Alarm box is mounted to the frame of the bike, and communicates to the cloud using WiFi or through cellular network communication
+                </span>
+            </div>
+
+            <h4>Contribution</h4>
+            <div>
+                For this project, my main focus was the physical system (the bike lock and alarm box), while my team members worked on the cloud infrastructure and user interface. My contributions included:
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        Designing the physical bike lock and alarm box using Fusion360. I manufactured the components using a Bambu A1 mini, and used iterative prototyping techniques to make improvements to the strength and usability of the design. I also designed the physical snapping mechanism to allow users to easily open and close the bike lock, while accommodating an electrical connection through the loop of the lock.
+                    </li>
+            <div class="media-holder">
+                <img class="big" src="../static/bike-alarm-CAD-components.png" alt="CAD model of components">
+                <span class="image-label">
+                    Blow-up renderings of the 3D CAD models of the bike lock and alarm box. Created with Fusion360. 
+                </span>
+            </div>
+                    <li>
+                        Designing an electrical layout for the electrical components, soldering all components on two prototype boards, and assembling the components into the bike lock and alarm box.
+                    </li>
+                    <li>
+                        Programming a ESP8266 microcontroller (C++) on the bike lock and alarm box to read from the sensors, process sensor data, and communicate with the cloud server using IoT protocols (MQTT and AMQP).
+                    </li>
+                </ul>
                 
-                ***placeholder text***
-
-                <br><br>
-                Click on the image to view the webpage!
-                <br><br>
-
-                </div>
-                <div>
-                    <a href="http://www.google.ca"  target="_blank" rel="noopener noreferrer">
-                        <img src="static/torusophone_pic.png" >
-                    </a>
-                </div>
-
+            <div class="media-holder">
+                <img class="big" src="../static/bike-alarm-microcontroller-logic-flow.png" alt="Microcontroller logic flow">
+                <span class="image-label">
+                    The flow of logic for the ESP8266 microcontrollers interfacing with sensors and actuators 
+                </span>
+            </div>
+            </div>
+            <h4>Demonstration of components</h4>
+            <div>
+                For the final project deliverable, we created the video below to demonstrate our proof of concept.
+            </div>
+            
+            <div class="media-holder">
+                <video width="640" height="360" controls poster="../static/bike-alarm-video-thumbnail.png">
+                    <source src="https://storage.googleapis.com/lapommecosmique/lapommecosmique.github.io/ECE1528%20-%20BIKEai%20-%20Project%20Video.mp4" type="video/mp4">
+                    Error - your browser does not support embedded video.
+                </video>
             </div>
         </div>
     </head>

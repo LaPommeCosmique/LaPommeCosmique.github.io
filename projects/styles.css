@@ -1,37 +1,24 @@
 body {
   width: 100%;
-  margin: 0;
+  margin-top: 60px;
   background-color: white;
+  display: flex;
+  justify-content: center;
 }
 
 html {
   scroll-behavior: smooth;
 }
-/**
- * Disable smooth scrolling when users have prefers-reduced-motion enabled
- */
-@media screen and (prefers-reduced-motion: reduce) {
-	html {
-		scroll-behavior: auto;
-	}
-}
 
 #content {
-  width: 100vw;
-  min-height: 100vh;/*
-  scroll-snap-points-y: repeat(300px);
-  scroll-snap-type: y mandatory;
-  scroll-snap-type: mandatory;*/
-  overflow: auto;
+  font-weight: normal;
+  font-family: Verdana, sans-serif;
+  margin: 0 80px;
+  max-width: 1000px;
 }
 
-#content > .content_holder {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  min-height: 100vh;
-  border: 1px solid #eaeaea;
+#content > div {
+  margin-bottom:20px;
 }
 
 h3 {
@@ -45,128 +32,72 @@ h3 {
 
 a {
   text-decoration: none;
+} 
+
+table {  
+  border-collapse: collapse;
+  margin: 20px 60px;
 }
-
-
-
-
-
-/* PROJECTS */
-
-#project_row {
-  display:table;
-}
-#project_row > .project_display {
-  display: table-cell;
-  cursor: pointer;
-}
-#project_display {
-  transition: height 0.2s, opacity 0.2s linear;
-}
-.project_display > img {
-  cursor: pointer;
-
-  width: 300px;
-  padding: 20px;
-  text-align: center;
-  box-sizing: border-box;
-}
-.project_display > .project_label {
-  font-size: 22px;
-  font-family: sans-serif;
-  color:gray;
-
-  text-align: center;
-}
-#project_row > .project_display:hover .project_ticks {
-  color: #3A85FF;
-  font-weight: bold;
-  padding-left: 10px;
-
-  transition: padding 0.1s linear
-}
-
-.project_content {
-  position: relative;
-}
-
-.project_content > div {
-  display:flex;
-  justify-content: center;
-}
-.project_content > div > .project_summary {
-  flex: 2;
-}
-
-.project_summary {
-  font-size: 20px;
-  color: gray;
-  min-width:350px;
-  font-weight: normal;
-  text-align: center;
-  padding-right: 40px;
-  max-width: 600px;
-  color: #555555;
-}
-
-.project_background {
-  padding: 12px;
-  box-sizing: border-box;
-}
-.project_background > h4 {
-  background-color: lightgray;
-  margin: 0;
-  text-align: center;
-  width: 120px;
-  border-radius: 16px 16px 0 0;
+td {
+  border: 1px solid #dddddd;
   padding: 8px;
+  font-size: 14px;
 }
 
-.project_background > div {
-  border: 2px solid lightgray;
-  border-radius: 0 32px 32px 32px;
-  font-size: 18px;
-  color:gray;
-  padding: 12px;
-}
-.project_summary > a {
-  color: rgb(49, 93, 225);
-}
-.project_summary > a:hover {
-  /* font-weight: bold; */
-  color: rgb(0, 39, 157);
-}
-.project_summary > a:active {
-  color: #222222;
-}
+/* MEDIA */
 
-.project_header {
+.media-holder {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
 }
-.project_header > * {
-  flex: 1 1 300px;
+.media-holder .image-label {
+  font-style: italic;
+  font-size: small;
+  width: 400px;
+  padding: 20px 60px;
+  text-align: center;
+}
+.media-holder > img.small {
+  width: 400px;
+}
+.media-holder > img.big {
+  width: 600px;
 }
 
-.project_content img {
-  box-sizing: border-box;
+/* BUTTON */
+
+.big-button {
+  width: 100%;
+  background-color: #1f77b4;
+  padding: 20px;
+  margin: 8px 0;
+  text-align: center;
+  border-radius: 6px;
+  color: white;
+}
+.big-button:hover {
+  background-color: #0a5184;
+}
+.big-button.colour-2 {
+  background-color: #9467bd;
+}
+.big-button.colour-2:hover {
+  background-color: #6321a0;
 }
 
-.project_content a > img {
-  box-shadow: 0px 0px 10px lightgray;
-  max-width: 500px;
-  margin: 16px;
-  margin-top: 100px;
+/* SUP NOTES */
+
+.sup {
+  font-size: 11px;
 }
-.project_content a > img:hover {
-  box-shadow: 0px 0px 25px lightgray;
-}
+
+/* PROJECTS BACK BUTTON */
 
 .project_back_holder {
   font-size: 20px;
   position:absolute;
-  top: -40px;
+  top: 12px;
   text-align: left;
   padding-left: 32px;
   color: darkgray;
@@ -174,7 +105,7 @@ a {
 
 .project_back {
   cursor: pointer;
-  padding:8px;
+  /* padding:8px; */
 }
 .project_back .project_ticks {
   padding-left: 8px;
@@ -187,6 +118,4 @@ a {
   font-weight: bold;
   padding-left: 0px;
   padding-right: 24px;
-
-  transition: padding 0.1s linear;
 }

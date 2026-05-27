@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Alex's Profile</title>
+        <link rel="icon" href="../../static/circuit_icon.png" media="(prefers-color-scheme: light)">
+        <link rel="icon" href="../../static/circuit_icon_dark.png" media="(prefers-color-scheme: dark)">
+
+        <link rel="stylesheet" href="../styles.css">
+    </head>
+    <body>
+        <div id="content">
+            
+            <a href="../../index.html#projects">
+                <h3 class="project_back_holder">
+                    <span class="project_back">
+                    <span class="project_ticks">&#8249;</span>
+                    Projects
+                    </span>
+                </h3>
+            </a>
+
+
+            <h3> Neural Collapse Pruning </h3>
+
+            <a href="./nc-pruning-report.pdf" target="_blank">
+                <div class="big-button">
+                    Click here to view the Neural Collapse Pruning report
+                </div>
+            </a>
+
+            <h4>Background and Motivation</h4>
+            
+            <div>
+                For my Master’s project at UofT, I worked under the guidance of Professor Vardan Papyan and PhD student Stephen Zhang on an eight month research project to explore a method of optimizing deep learning neural networks, such as LLMs (like ChatGPT) and Vision Transformers. Specifically, we wanted to explore if we could use invariant transformations to modify the model in a way that would allow us to compress large models more efficiently. 
+            </div>
+            <div>
+                But what are invariant transformations? Invariant transformations are mathematical operations that can be performed on a deep learning model to change its internal parameters in a way that does not affect its behaviour. In other words, if we consider a deep learning model to be a mathematical function - which takes an input, and produces an output - then an invariant transformation would create a different, but mathematically equivalent model. The new model would produce the exact same outputs as the original, given the same set of inputs.
+            </div>
+
+
+            <div class="media-holder">
+                <img class="small" src="../../static/nc-pruning-invariant-transformations.png" alt="Spectrogram">
+                <span class="image-label">
+                    An invariant transformation creates a new model with different internal parameters, but behaves the exact same way as the original
+                </span>
+            </div>
+
+
+            <div>
+                If we could use invariant transformations to find the sparsest representation of internal parameters, the new model would theoretically be easier to compress with existing model compression techniques.
+            </div>
+            <div>
+                We called our method “Neural Collapse Pruning”, because the basis for our idea would take advantage of a phenomenon that occurs in deep learning models called “Neural Collapse”. Neural Collapse describes how the mathematical representation of concepts in models tend to follow highly structured behaviour, in a way that minimizes within-class variance and maximizes between-class variance. Our approach was to align the structure formed through Neural Collapse in a way that maximizes sparsity of the internal parameters.
+            </div>
+
+            
+            <div class="media-holder">
+                <img class="big" src="../../static/nc-pruning-neural-collapse.png" alt="Spectrogram">
+                <span class="image-label">
+                    Over the course of training, the internal representations for concepts (represented by the floating dots) collapse into a structure known as the “Simplex ETF”. Aligning this structure to maximize sparsity of internal parameters would improve model compression. (<a href="https://arxiv.org/abs/2008.08186">image source</a>)
+                </span>
+            </div>
+
+
+            <h4>Approach and Contribution</h4>
+
+            <div>
+                Over the duration of the project, my tasks included the following.
+            </div>
+            <ul>
+                <li>
+                    Conducting a literature review of existing model optimization methods, such as pruning, knowledge distillation, and quantization
+                </li>
+                <li>
+                    Developing a theoretical framework for performing transformations in Transformer-based deep learning models along scale, permutation, rotation, and translation invariances
+                </li>
+                <li>
+                    Developing a multi-variable optimization method to maximize the sparsity of internal matrices of transformer models through invariant transformations
+                </li>
+                <li>
+                    Developing the code infrastructure in PyTorch and TransformerLens to modify existing PyTorch models, sample internal embeddings during runtime, and evaluate the performance of modified models
+                </li>
+                <li>
+                    Conceptualizing and testing new ideas to improve the performance of our method
+                </li>
+            </ul>
+            <h4>Results</h4>
+
+            <div>
+                Analysing the results of our method show that modifying a model using invariant transformations can potentially be a promising method to improve pruning efficiency. In some cases, our method had a 75% recovery over normal pruning (recovery measures how much of the accuracy loss from pruning is recovered after applying our method). 
+            </div>
+            <div>
+                However, the performance improvement was not consistent across similar test cases, and would sometimes negatively affect performance. Because of the lack of consistency, our method, as it currently stands, is not a reliable way of improving pruning efficiency across all models. Future work could involve investigating the underlying patterns that cause some models to do worse, and refine the method to consistently improve pruning efficiency in cases where it currently negatively impacts performance.
+            </div>
+            
+            <div class="media-holder">
+                <img class="small" src="../../static/nc-pruning-results.png" alt="Spectrogram">
+                <span class="image-label">
+                    The recovery of four variations of our method using the Top(n) metric. A recovery greater than zero represents an improvement to models compressed without using our method.
+                </span>
+            </div>
+
+            
+            <a href="./nc-pruning-report.pdf" target="_blank">
+                <div class="big-button">
+                    Click here to view the Neural Collapse Pruning report
+                </div>
+            </a>
+        </div>
+    </head>
+</html>
