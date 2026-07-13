@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Alex's Profile</title>
+        <link rel="icon" href="../../static/circuit_icon.png" media="(prefers-color-scheme: light)">
+        <link rel="icon" href="../../static/circuit_icon_dark.png" media="(prefers-color-scheme: dark)">
+
+        <link rel="stylesheet" href="../styles.css">
+    </head>
+    <body>
+        <div id="content">
+            
+            <a href="../../index.html#projects">
+                <h3 class="project_back_holder">
+                    <span class="project_back">
+                    <span class="project_ticks">&#8249;</span>
+                    Projects
+                    </span>
+                </h3>
+            </a>
+
+            <h3> Interlocking Buttons </h3>
+
+            <h4> Overview </h4>
+            <div>
+                The Interlocking Buttons are a mechanism I designed for an ongoing personal project for bike controls. The mechanism consists of two buttons: a small button and a large button. The two buttons are mechanically linked, so that depressing one button raises the other. 
+            </div>
+            <div>
+                The buttons have two possible states, as shown in the following image.
+            </div>
+            <div class="media-holder">
+                <img class="big" src="../../static/interlocking-buttons-states.png" alt="Interlocking Button States">
+                <span class="image-label">
+                    Interlocking Button States
+                </span>
+            </div>
+            <div>
+                Depressing the large button from the “neutral” state will raise the small button to an “active” state, while depressing the small button from the “active” state will return the mechanism to the “neutral” state. 
+            </div>
+            <div>
+                I used Fusion360 to design the Interlocking Buttons and fabricated them on a Bambu A1 mini 3D printer. In total, the mechanism is assembled from 43 individual components, of which 15 are unique. 
+            </div>
+            <div>
+                The following document contains a BOM of the assembly, followed by fully-dimensioned engineering drawings of all components in accordance with the ASME Y14 standard. The rest of this page provides a summary of the design process.
+            </div>
+            
+            <a href="./engineering-drawing.pdf" target="_blank">
+                <div class="big-button">
+                    View Engineering Drawings
+                </div>
+            </a>
+
+            
+            <h4> Design Specifications </h4>
+            
+            <div>
+                To guide the design process, I used five design specifications as listed below.
+            </div>
+
+            <ol>
+                <li>
+                    <b>Function</b> - the design should contain two mechanically linked buttons with two distinct states (as described previously). The surfaces of the buttons should remain flat and parallel with each other at all times.
+                </li>
+                <li>
+                    <b>Comfort</b> - the design should move smoothly and be pleasing to use.
+                </li>
+                <li>
+                    <b>Size</b> - the design should fit within a physical envelope of 40mm by 30mm by 80mm.
+                </li>
+                <li>
+                    <b>Durability</b> - the design should withstand repeated cycles of usage without any deterioration, and withstand abnormal loading conditions (including vertical, transverse, and bending forces).
+                </li>
+                <li>
+                    <b>Manufacturability</b> - the design should allow for quick assembly without needing specialized tools.
+                </li>
+            </ol>
+
+            <h4> Concept generation </h4>
+
+            <div>
+                To satisfy the functional requirements, I would have to work out two mechanisms - how the buttons would move up and down (function 1), and how the buttons would be mechanically linked (function 2). Since the design of these two functions could more or less be independent (i.e. using a specific design for one function would not restrict the design of the second function), it made sense for me to focus on designing these two mechanisms individually.
+            </div>
+            <div>
+                I wanted to explore a diverse range of options, so I came up with five concepts for function 1 (vertical translation) and four concepts for function 2 (mechanical link). Tables 1 and 2 describe these mechanisms.
+            </div>
+
+
+            <div class="media-holder">
+                <span style="font-size: small;">
+                    <i><b>Table 1 </b> - Concepts for Function 1 (Vertical Translation)</i>
+                </span>
+                <table>
+                    <tr>
+                        <td>
+                            1A
+                        </td>
+                        <td>
+                            Two-arm linkage
+                        </td>
+                        <td>
+                            Linkages made of two arms (joined by hinges) connect the baseplate to the button. A total of four of these linkages are used to restrict the movement of the buttons to a single degree of freedom.
+                        </td>
+                        <td>
+                            <img style="width: 200px" src="../../static/interlocking-buttons-translation-1.png" alt="Image of concept design">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            1B
+                        </td>
+                        <td>
+                            Slot arm
+                        </td>
+                        <td>
+                            Arms that are hinged to the baseplate are allowed to slide along a slot on the button as the button moves and down. Four of these arms are used to restrict movement to a single degree of freedom.
+                        </td>
+                        <td>
+                            <img style="width: 200px" src="../../static/interlocking-buttons-translation-2.png" alt="Image of concept design">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            1C
+                        </td>
+                        <td>
+                            Ball socket joint
+                        </td>
+                        <td>
+                            Arms connect the baseplate to the button using ball socket joints. Because a single arm is used, the surface of the button must undergo rotation along the vertical axis as the button moves up and down.
+                        </td>
+                        <td>
+                            <img  style="width: 200px" src="../../static/interlocking-buttons-translation-3.png" alt="Image of concept design">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            1D
+                        </td>
+                        <td>
+                            Shaft
+                        </td>
+                        <td>
+                            The button slides up and down a vertical shaft on the baseplate.
+                        </td>
+                        <td>
+                            <img  style="width: 200px" src="../../static/interlocking-buttons-translation-4.png" alt="Image of concept design">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            1E
+                        </td>
+                        <td>
+                            Slot
+                        </td>
+                        <td>
+                            Slot pins on the button slide up and down vertical slots on the baseplate.
+                        </td>
+                        <td>
+                            <img  style="width: 200px" src="../../static/interlocking-buttons-translation-5.png" alt="Image of concept design">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            
+            <div class="media-holder">
+                <span style="font-size: small;">
+                    <i><b>Table 2 </b> - Concepts for Function 2 (Mechanical Link)</i>
+                </span>
+                <table>
+                    <tr>
+                        <td>
+                            2A
+                        </td>
+                        <td>
+                            Lever
+                        </td>
+                        <td>
+                            A lever raises one button when the other is pressed down, like a seesaw.
+                        </td>
+                        <td>
+                            <img  style="width: 200px" src="../../static/interlocking-buttons-interlock-1.png" alt="Image of concept design">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            2B
+                        </td>
+                        <td>
+                            Linked Lever
+                        </td>
+                        <td>
+                            Similar to (1), but with both ends of the lever directly connected to the buttons through a linked arm. As a result, the friction resulting from the contact point between the lever and the buttons in (1) is replaced by rotational movement of the hinges in the linked arm.
+                        </td>
+                        <td>
+                            <img  style="width: 200px" src="../../static/interlocking-buttons-interlock-2.png" alt="Image of concept design">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            2C
+                        </td>
+                        <td>
+                            Slotted L-bar
+                        </td>
+                        <td>
+                            An L-shaped arm is connected to both buttons with hinges on either side. In the middle, a slot pin slides along a slot on the baseplate
+                        </td>
+                        <td>
+                            <img  style="width: 200px" src="../../static/interlocking-buttons-interlock-3.png" alt="Image of concept design">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            2D
+                        </td>
+                        <td>
+                            Rack and Pinion
+                        </td>
+                        <td>
+                            A rack and pinion system connects both buttons. Toothed bars are connected to each button, which are mated to both sides of a gear. Moving one button up and down causes the gear to rotate, which in turn moves the other button.
+                        </td>
+                        <td>
+                            <img  style="width: 200px" src="../../static/interlocking-buttons-interlock-4.png" alt="Image of concept design">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+             
+            <h4> Concept Selection and Prototyping </h4>
+
+            <div>
+                To identify the best option among the potential concepts, my approach was to design a simple component to encapsulate the basic functionality of each option. My objective was to create a physical representation of each concept to evaluate their behaviour when brought into the physical world. The following figure shows three prototypes for Function 1 (vertical translation).
+            </div>
+
+            <div class="media-holder">
+                <img class="small" src="../../static/interlocking-buttons-concept-prototype.png" alt="Interlocking Button">
+                <span class="image-label">
+                    Prototypes for concepts 1A, 1C, and 1B (left to right)
+                </span>
+            </div>
+
+            <div>
+                By creating a quick physical prototype of each concept, I could get a better sense of how well each mechanism would satisfy the design requirements. By evaluating their physical prototypes, I eliminated some concepts due to comfort (the frictional interactions in concepts 1D, 2A, and 2C made the sliding mechanism abrasive and unpleasant to use), size (the complexity of concept 2D made it difficult to fit within the required physical envolope), and durability (concept 1C had structural weaknesses that would cause the mechanism to break under abnormal loading conditions).
+            </div>
+
+            <div>
+                Some concepts showed promise, and I iterated over these designs to improve the strength, manufacturability, and comfort. For example, the following figures show how adding a curvature to the slot in concept 1B results in a larger range of motion and a smoother sliding motion (due to the forces of the slot pin being always approximately aligned with the direction of the slot).
+            </div>
+            
+            <div class="media-holder">
+                <img class="small" src="../../static/interlocking-buttons-iteration-1.png" alt="Interlocking Button">
+                <span class="image-label">
+                    Iterating concept 1B; original design (left) and iterated design (right)
+                </span>
+            </div>
+            <div class="media-holder">
+                <img class="small" src="../../static/interlocking-buttons-iteration-2.png" alt="Interlocking Button">
+                <span class="image-label">
+                    Extended buttons from the previous figure; original design (left) and iterated design (right)
+                </span>
+            </div>
+
+            <div>
+                In the end, I chose to combine concepts 1A and 2B for the final mechanism due to superior durability and smoothness of movement. The following figure shows a BOM of the assembly. Clicking the figure will open engineering drawings for all components.
+            </div>
+
+            <div class="media-holder">
+                
+                <a href="./engineering-drawing.pdf" target="_blank">
+                    <img style="width: 600px;" src="../../static/interlocking-buttons-bom.png" alt="Interlocking Button">
+                </a>
+                <span class="image-label">
+                    BOM of the assembly. Click the image to view engineering drawings
+                </span>
+            </div>
+        </div>
+    </head>
+</html>
