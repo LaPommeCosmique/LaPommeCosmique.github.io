@@ -323,16 +323,16 @@ a {
 
 /* PROJECTS */
 
-#project_row {
+.project_row {
   display:table;
 }
-#project_row > .project_display {
+.project_row > .project_display {
   display: table-cell;
   cursor: pointer;
 }
-#project_display {
+/* .project_display {
   transition: height 0.2s, opacity 0.2s linear;
-}
+} */
 .project_display > img {
   cursor: pointer;
 
@@ -341,17 +341,42 @@ a {
   text-align: center;
   box-sizing: border-box;
 }
-.project_display > .project_label {
+.project_row.first_row > .project_display > img {
+  padding-top: 0px;
+}
+.project_row {
+  margin-bottom: 20px;
+}
+.project_display > .project_label_group {
   font-size: 22px;
   font-family: sans-serif;
   color:gray;
 
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-#project_row > .project_display:hover .project_ticks {
+.project_display > .project_label_group > .project_label {
+  display: flex;
+  flex-direction: column;
+}
+.project_display > .project_label_group > .project_label > .project_desc {
+  font-size: 13px;
+  margin-top: 13px;
+  color:rgb(152, 152, 152);
+}
+.project_display > .project_label_group > .project_label > .project_date {
+  font-size: 13px;
+  color:rgb(152, 152, 152);
+}
+.project_row > .project_display .project_ticks {
+  padding-left: 20px;
+}
+.project_row > .project_display:hover .project_ticks {
   color: #3A85FF;
   font-weight: bold;
-  padding-left: 10px;
+  padding-left: 30px;
 
   transition: padding 0.1s linear
 }
